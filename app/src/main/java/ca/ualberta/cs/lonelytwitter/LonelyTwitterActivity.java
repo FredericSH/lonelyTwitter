@@ -24,7 +24,6 @@ public class LonelyTwitterActivity extends Activity {
 	private EditText bodyText;
 	private ListView oldTweetsList;
 	
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,11 +41,6 @@ public class LonelyTwitterActivity extends Activity {
 
 				Date theDate = new Date();
 				Tweet newTweet = new NormalTweet(text);
-				try {
-					newTweet.setMessage("test");
-				} catch (TweetTooLongException e) {
-					e.printStackTrace();
-				}
 				newTweet.getMessage();
 
 				ImportantTweet newImportantTweet = new ImportantTweet(text);
