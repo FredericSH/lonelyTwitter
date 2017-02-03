@@ -3,14 +3,24 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
- * Created by shida3 on 1/19/17.
+ * NormalTweet class
+ * @author shida
  */
 
 public class NormalTweet extends Tweet {
+    /**
+     * normal tweet constructor
+     * @param message
+     */
     public NormalTweet(String message) {
         super(message);
     }
 
+    /**
+     * normal tweet constructor
+     * @param date
+     * @param message
+     */
     public NormalTweet(Date date, String message) {
         super(date, message);
     }

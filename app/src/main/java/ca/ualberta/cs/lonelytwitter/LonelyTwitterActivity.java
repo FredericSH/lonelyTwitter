@@ -23,6 +23,12 @@ import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+/**
+ * Lonely Twitter activity, extends activity, provides classes necessary
+ * for interface
+ * @see Activity
+ * @see Tweet
+ */
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file.sav";
@@ -31,7 +37,7 @@ public class LonelyTwitterActivity extends Activity {
 
 	private ArrayList<Tweet> tweetList;
     private ArrayAdapter<Tweet> adapter;
-	
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -81,6 +87,9 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+    /**
+     * Loads tweetlist from file
+     */
 	private void loadFromFile() {
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
@@ -95,11 +104,13 @@ public class LonelyTwitterActivity extends Activity {
 
 		} catch (FileNotFoundException e) {
             tweetList = new ArrayList<Tweet>();
-		} catch (IOException e) {
-			throw new RuntimeException();
+            throw new RuntimeException();
 		}
 	}
-	
+
+    /**
+     * saves tweetlist to file
+     */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
