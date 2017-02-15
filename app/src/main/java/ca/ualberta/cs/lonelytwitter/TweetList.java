@@ -1,6 +1,7 @@
 package ca.ualberta.cs.lonelytwitter;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by rfsh on 2017-02-14.
@@ -17,8 +18,9 @@ public class TweetList {
     }
 
     public boolean hasTweet (Tweet tweet) {
+        // tweets.contains(tweet) is functionally the same
         for (Tweet t: tweets) {
-            if (t.getMessage().equals(tweet.getMessage()))
+            if (t.equals(tweet))
                 return true;
         }
         return false;
@@ -32,7 +34,9 @@ public class TweetList {
         return tweets.get(index);
     }
 
-    public Tweet getTweets(int index) {
+    public ArrayList<Tweet> getTweets() {
+        Collections.sort(tweets);
+        return tweets;
     }
 
     public int getCount() {
